@@ -15,6 +15,7 @@ import ProfileDetail from "./User/ProfileDetail";
 import PostsDetail from "./Posts/PostsDetail";
 import ProduceList from "./Produce/produceList";
 import UpdatePostForm from "./Posts/UpdatePostForm";
+import Feed from "./Feed";
 
 function App() {
   const { data } = useGetTokenQuery();
@@ -47,7 +48,8 @@ function App() {
             </Route>
           </Route>
           <Route path="posts">
-            <Route index element={<PostsList />} />
+            {/* <Route index element={<PostsList />} /> */}
+            <Route index element={<Feed />} />
             <Route path="new" element={<PostForm />} />
             <Route path=":posts_id">
               <Route index element={<PostsDetail />} />
