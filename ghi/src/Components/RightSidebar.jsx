@@ -21,7 +21,7 @@ const RightSidebar = () => {
           <div className="h-[2px] bg-gray-300 my-5"></div>
 
           <div className="flex items-center justify-between">
-            <h1 className="font-semibold text-gray-600 text-[18px]">Contact</h1>
+            <h1 className="font-semibold text-gray-600 text-[18px]">Blogs</h1>
             <div className="flex gap-4">
               <BiSearch />
               <BsThreeDots />

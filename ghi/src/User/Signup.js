@@ -182,7 +182,7 @@ function Signup({ user_id }) {
                   value={password}
                   placeholder="Password"
                   required
-                  type="text"
+                  type="password"
                   name="password"
                   id="password"
                   className="form-control pl-2 py-2 justify-center"
