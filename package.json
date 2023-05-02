@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "react-icons": "^4.8.0"
+    "react-icons": "^4.8.0",
+    "react-lottie": "^1.2.3"
   }
 }

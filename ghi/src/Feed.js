@@ -14,7 +14,7 @@ const Feed = () => {
         {posts.map((post) => {
           return <Post key={post.id} id={post.id} data={post.data()} />;
         })}
-      </div> */}
+        </div> */}
     </>
   );
 };
