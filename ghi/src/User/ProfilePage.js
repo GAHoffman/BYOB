@@ -7,7 +7,6 @@ import {
   AccordionHeader,
   AccordionBody,
 } from "@material-tailwind/react";
-import PostsDetail from "../Posts/PostsDetail";
 import PostsCard from "../Posts/PostsCard";
 import ProduceDetail from "../Produce/ProduceDetail";
 import { useGetAllPostsQuery } from "../store/postsApi";
@@ -39,24 +38,6 @@ export default function ProfilePage() {
   };
 
   const { data: postsData } = useGetAllPostsQuery();
-
-  const [open, setOpen] = useState(-1);
-
-  const handleOpen = (index) => {
-    if (index === open) {
-      setOpen(-1);
-    } else {
-      setOpen(index);
-    }
-  };
-
-  const handleClose = (index) => {
-    if (index === openProduce) {
-      setOpenProduce(-1);
-    } else if (index === open) {
-      setOpen(-1);
-    }
-  };
 
   const userId = user_id;
 
@@ -241,6 +222,7 @@ export default function ProfilePage() {
             <hr className="border-t-2 border-gray-500 mb-6" />
             <div className="grid grid-cols-4 gap-4">
               {postsData &&
+                /* eslint-disable eqeqeq */
                 postsData
                   .filter((singlePost) => singlePost.user.user_id == userId)
                   .map((singlePost, index) => (
