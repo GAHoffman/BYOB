@@ -217,7 +217,7 @@ const ProduceForm = () => {
                 </FormGroup>
               </div>
 
-              <div>
+              <div className="pb-4">
                 <label htmlFor="style">Price</label>
                 <input
                   value={price}
@@ -233,7 +233,8 @@ const ProduceForm = () => {
               </div>
               <button
                 type="submit"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-[100%]  disabled:bg-gray-300 disabled:text-gray-500"
+                disabled={!price.trim()}
               >
                 Create this produce
               </button>

@@ -5,6 +5,7 @@ import PostForm from "./Posts/PostForm";
 import Story from "./Components/Story";
 import Lottie from "lottie-react";
 import plantsgardening from "./Assets/plantsgardening.json";
+import PostsList from "./Posts/postsList";
 
 const Feed = () => {
   return (
@@ -14,13 +15,10 @@ const Feed = () => {
       <div className="mx-auto mt-4 max-w-[600px] 2xl:max-w-[800px] mb-10">
         <Story />
         <PostForm />
-
-        {/* {posts.map((post) => {
-          return <Post key={post.id} id={post.id} data={post.data()} />;
-        })} */}
+        <PostsList />
       </div>
       <Lottie
-        className="fixed top-10 -z-10 w-auto min-w-full min-h-full max-w-none opacity-25"
+        className="fixed top-0 -z-10 w-auto h-auto min-w-full min-h-full max-w-none opacity-25"
         animationData={plantsgardening}
       />
     </>

@@ -6,6 +6,7 @@ import {
   useDeletePostsMutation,
 } from "../store/postsApi";
 import { useGetAllProduceQuery } from "../store/produceApi";
+import { useGetPostsQuery } from "../store/postsApi";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -26,6 +27,8 @@ export default function UpdatePostForm() {
   const handleProduceChange = (event) => {
     setProduce(event.target.value);
   };
+
+  const { data: post } = useGetPostsQuery(posts_id);
 
   const {
     data: produceData,
@@ -98,7 +101,15 @@ export default function UpdatePostForm() {
                   name="produce"
                   className="form-select"
                 >
-                  <option value="">Choose from your produce</option>
+                  <option
+                    value={
+                      post?.produce?.produce_id ? post.produce.produce_id : ""
+                    }
+                  >
+                    {post?.produce?.produce_id
+                      ? post.produce.name
+                      : "Choose from your produce"}
+                  </option>
                   {produceData &&
                     produceData.map((singleProduce) => {
                       return (
@@ -128,7 +139,7 @@ export default function UpdatePostForm() {
                 />
               </div>
 
-              <div>
+              <div className="pb-4">
                 <label htmlFor="text">Image</label>
                 <input
                   value={postImgUrl}
@@ -142,20 +153,22 @@ export default function UpdatePostForm() {
                 />
               </div>
 
-              <button
-                onClick={handleSubmit}
-                type="submit"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-              >
-                Update post
-              </button>
-              <button
-                onClick={handleDelete}
-                type="submit"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-              >
-                Delete post
-              </button>
+              <div className="flex gap-4">
+                <button
+                  onClick={handleSubmit}
+                  type="submit"
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                >
+                  Update post
+                </button>
+                <button
+                  onClick={handleDelete}
+                  type="submit"
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                >
+                  Delete post
+                </button>
+              </div>
             </form>
           </div>
         </div>

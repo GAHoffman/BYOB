@@ -46,7 +46,7 @@ const Story = () => {
       title: "Bill Gates",
       img: "/bill_gates.jpg",
       postImg:
-        "bg-[url('https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]",
+        "bg-[url('https://images.pexels.com/photos/2847908/pexels-photo-2847908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]",
       hrefLink: "https://youtu.be/bRWac1OpxPY",
     },
   ];

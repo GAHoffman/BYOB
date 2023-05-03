@@ -14,8 +14,12 @@ const LeftSidebar = () => {
           <LeftSidebarLink image={user.avatar_url} text={user.username} />
         </Link>
         <LeftSidebarLink image="/gardener.png" text="Friends" />
-        <LeftSidebarLink image="/seeds.png" text="Groups" />
-        <LeftSidebarLink image="/market.png" text="Marketplace" />
+        <Link to={`/users/${user.user_id}/produce/new`}>
+          <LeftSidebarLink image="/seeds.png" text="Grow a Produce" />
+        </Link>
+        <Link to="/posts">
+          <LeftSidebarLink image="/market.png" text="Make a Post" />
+        </Link>
         <LeftSidebarLink image="/bookmark.png" text="Saved" />
         <LeftSidebarLink image="/vineyard.png" text="Pages" />
         <LeftSidebarLink image="/calendar_1.png" text="Events" />
