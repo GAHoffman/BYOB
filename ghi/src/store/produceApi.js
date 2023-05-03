@@ -6,6 +6,7 @@ export const produceApi = createApi({
     baseUrl: process.env.REACT_APP_BYOB_SERVICE_API_HOST,
     credentials: "include",
   }),
+  tagTypes: ["produceList"],
   endpoints: (builder) => ({
     getAllProduce: builder.query({
       query: (user_id) => `/users/${user_id}/produce`,
@@ -21,7 +22,7 @@ export const produceApi = createApi({
         body: data,
         method: "post",
       }),
-      invalidatesTag: ["produceList"],
+      invalidatesTags: ["produceList"],
     }),
     updateProduce: builder.mutation({
       query: ({ user_id, produce_id, data }) => ({

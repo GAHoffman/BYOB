@@ -45,7 +45,7 @@ function PostsCard({ singlePost }) {
     setShowModal(false);
   };
 
-  if (singlePost?.produce_id !== null) {
+  if (singlePost?.produce?.produce_id !== null) {
     return (
       <>
         <section className="w-64 mx-auto bg-byob-cyan rounded-t-2xl px-8 py-4 shadow-lg">

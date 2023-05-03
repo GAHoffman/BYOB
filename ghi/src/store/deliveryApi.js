@@ -6,6 +6,7 @@ export const deliveryApi = createApi({
     baseUrl: process.env.REACT_APP_BYOB_SERVICE_API_HOST,
     credentials: "include",
   }),
+  tagTypes: ["deliveryList"],
   endpoints: (builder) => ({
     getAllDeliveries: builder.query({
       query: () => `/deliveries`,
