@@ -28,7 +28,7 @@ export default function UpdatePostForm() {
     setProduce(event.target.value);
   };
 
-  const { data: post } = useGetPostsQuery(posts_id);
+  const { data: post } = useGetPostsQuery(posts_id, { skip: !posts_id });
 
   const {
     data: produceData,
@@ -128,7 +128,9 @@ export default function UpdatePostForm() {
               <div>
                 <label htmlFor="text">Post body</label>
                 <input
-                  value={textState}
+                  value={
+                    !textState.trim() && post?.text ? post.text : textState
+                  }
                   onChange={handleTextStateChange}
                   placeholder="Write the body of your post here!"
                   required
@@ -142,7 +144,11 @@ export default function UpdatePostForm() {
               <div className="pb-4">
                 <label htmlFor="text">Image</label>
                 <input
-                  value={postImgUrl}
+                  value={
+                    !postImgUrl.trim() && post?.postimg_url
+                      ? post.postimg_url
+                      : postImgUrl
+                  }
                   onChange={handlePostImgUrlChange}
                   placeholder="Drop an image here!"
                   required
