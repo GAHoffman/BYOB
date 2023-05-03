@@ -64,74 +64,72 @@ export default function PostForm() {
   }
   return (
     <div className="px-4 py-6 bg-white rounded-[17px] shadow-md mt-5">
-      <div className="row">
-        <div className="offset-3 col-6">
-          <h1 className="items-center text-2xl font-bold tracking-tight text-gray-900">
-            What's Growing in Your Garden?
-          </h1>
-
-          <form onSubmit={handleSubmit} id="create-post-form">
-            <div>
-              <select
-                value={produce.produce_id}
-                onChange={handleProduceChange}
-                id="produce"
-                name="produce"
-                className="form-select"
-              >
-                <option value="">Choose from your produce</option>
-                {produceData &&
-                  produceData.map((singleProduce) => {
-                    return (
-                      <option
-                        key={singleProduce.produce_id}
-                        value={singleProduce.produce_id}
-                      >
-                        {singleProduce.name}
-                      </option>
-                    );
-                  })}
-                ;
-              </select>
-            </div>
-
-            <div>
-              <label htmlFor="text">Post body</label>
-              <input
-                value={textState}
-                onChange={handleTextStateChange}
-                placeholder="Write the body of your post here!"
-                required
-                type="text"
-                name="text"
-                id="text"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="text">Image</label>
-              <input
-                value={postImgUrl}
-                onChange={handlePostImgUrlChange}
-                placeholder="Drop an image here!"
-                required
-                type="text"
-                name="postImgUrl"
-                id="postImgUrl"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-            >
-              Create this post
-            </button>
-          </form>
+      <form onSubmit={handleSubmit} id="create-post-form">
+        <div className="flex gap-4 border-b border-gray-300 pb-4">
+          <img
+            className="w-[44px] h-[44px] object-cover rounded-full"
+            src={user.avatar_url}
+            alt="userImg"
+          />
+          <select
+            value={produce.produce_id}
+            onChange={handleProduceChange}
+            id="produce"
+            name="produce"
+            className="form-select"
+          >
+            <option value="">Choose from your produce</option>
+            {produceData &&
+              produceData.map((singleProduce) => {
+                return (
+                  <option
+                    key={singleProduce.produce_id}
+                    value={singleProduce.produce_id}
+                  >
+                    {singleProduce.name}
+                  </option>
+                );
+              })}
+            ;
+          </select>
         </div>
-      </div>
+
+        <div>
+          <label htmlFor="text">Post body</label>
+          <input
+            value={textState}
+            onChange={handleTextStateChange}
+            placeholder="What's Growing in Your Garden?"
+            required
+            type="text"
+            name="text"
+            id="text"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="text">Image</label>
+          <input
+            value={postImgUrl}
+            onChange={handlePostImgUrlChange}
+            placeholder="Drop an image here!"
+            required
+            type="text"
+            name="postImgUrl"
+            id="postImgUrl"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="bg-blue-500 text-white w-[100%] py-2 px-5 rounded-lg mt-[30px] disabled:bg-gray-300 disabled:text-gray-500"
+          disabled={!textState.trim() && !postImgUrl.trim()}
+        >
+          Create this post
+        </button>
+      </form>
     </div>
   );
 }
