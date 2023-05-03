@@ -12,7 +12,9 @@ const RightSidebar = () => {
           <h1 className="font-semibold text-gray-600 text-[18px]">
             Friend requests
           </h1>
-          <p className="text-primary">See All</p>
+          <p className="text-primary hover:text-blue-600 cursor-pointer">
+            See All
+          </p>
         </div>
 
         <div className="mt-4">
