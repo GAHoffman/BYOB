@@ -1,5 +1,4 @@
 import { useGetAllPostsQuery } from "../store/postsApi";
-// import PostsDetail from "./PostsDetail";
 import PostsListDetail from "./PostsListDetail";
 
 function PostsList() {

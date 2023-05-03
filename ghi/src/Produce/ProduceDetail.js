@@ -20,7 +20,7 @@ import { Link } from "react-router-dom";
 function ProduceDetail({ singleProduce }) {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/posts/new");
+    navigate("/posts");
   };
 
   return (
@@ -62,7 +62,8 @@ function ProduceDetail({ singleProduce }) {
           >
             <PhotoIcon className="-mt-0.5 h-5 w-5 text-yellow-700" />
             <span>
-              Decorative: {singleProduce ? singleProduce.is_decorative : ""}
+              Decorative:{" "}
+              {singleProduce ? `${singleProduce.is_decorative}` : ""}
             </span>
           </Typography>
           <Typography
@@ -70,7 +71,9 @@ function ProduceDetail({ singleProduce }) {
             className="flex items-center gap-1.5 font-normal"
           >
             <CheckBadgeIcon className="-mt-0.5 h-5 w-5 text-yellow-700" />
-            <span>{singleProduce ? singleProduce.is_available : ""}</span>
+            <span>
+              Available: {singleProduce ? `${singleProduce.is_available}` : ""}
+            </span>
           </Typography>
           <Typography
             color="blue-gray"

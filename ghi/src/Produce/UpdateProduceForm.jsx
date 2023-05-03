@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import {
   useUpdateProduceMutation,
   useDeleteProduceMutation,
+  useGetProduceQuery,
 } from "../store/produceApi";
 import { useParams } from "react-router-dom";
 import FormGroup from "@mui/material/FormGroup";
@@ -20,6 +21,8 @@ const UpdateProduceFrom = () => {
   const [expDate, setExpDate] = useState("");
   const [price, setPrice] = useState("");
   const navigate = useNavigate();
+
+  const { data: produce } = useGetProduceQuery({ user_id, produce_id });
 
   const [updateProduce, result] = useUpdateProduceMutation({
     user_id,
@@ -133,7 +136,7 @@ const UpdateProduceFrom = () => {
               <div>
                 <label htmlFor="name">Name</label>
                 <input
-                  value={name}
+                  value={produce?.name ? produce?.name : name}
                   onChange={handleNameChange}
                   placeholder="Name"
                   required
@@ -147,7 +150,7 @@ const UpdateProduceFrom = () => {
               <div>
                 <label htmlFor="quantity">Quantity</label>
                 <input
-                  value={quantity}
+                  value={produce?.quantity ? produce?.quantity : quantity}
                   onChange={handleQuantityChange}
                   placeholder="Quantity"
                   required
@@ -161,7 +164,7 @@ const UpdateProduceFrom = () => {
               <div>
                 <label htmlFor="weight">Weight</label>
                 <input
-                  value={weight}
+                  value={produce?.weight ? produce?.weight : weight}
                   onChange={handleWeightChange}
                   placeholder="Weight"
                   required
@@ -175,7 +178,9 @@ const UpdateProduceFrom = () => {
               <div>
                 <label htmlFor="description">Description</label>
                 <input
-                  value={description}
+                  value={
+                    produce?.description ? produce?.description : description
+                  }
                   onChange={handleDescriptionChange}
                   placeholder="Description"
                   required
@@ -189,7 +194,7 @@ const UpdateProduceFrom = () => {
               <div>
                 <label htmlFor="imageUrl">Image Url</label>
                 <input
-                  value={imageUrl}
+                  value={produce?.image_url ? produce?.image_url : imageUrl}
                   onChange={handleImageUrlChange}
                   placeholder="imageUrl"
                   required
@@ -203,7 +208,7 @@ const UpdateProduceFrom = () => {
               <div>
                 <label htmlFor="expirationDate">Expiration Date</label>
                 <input
-                  value={expDate}
+                  value={produce?.exp_date ? produce?.exp_date : expDate}
                   onChange={handleExpDateChange}
                   placeholder="Expiration Date"
                   required
@@ -242,7 +247,7 @@ const UpdateProduceFrom = () => {
               <div className="pb-4">
                 <label htmlFor="price">Price</label>
                 <input
-                  value={price}
+                  value={produce?.price ? produce?.price : price}
                   onChange={handlePriceChange}
                   placeholder="price"
                   required
