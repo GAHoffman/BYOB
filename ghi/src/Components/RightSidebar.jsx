@@ -1,6 +1,7 @@
 import React from "react";
-import { BiSearch, BiEdit } from "react-icons/bi";
+import { BiSearch } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
+import { GrChat } from "react-icons/gr";
 import FriendRequest from "./FriendRequest";
 import BlogLink from "./BlogLink";
 
@@ -33,7 +34,7 @@ const RightSidebar = () => {
           <BlogLink />
 
           <div className="bg-gray-300 h-[44px] w-[44px] grid place-items-center text-[26px] rounded-full fixed right-0 bottom-0 mr-8 mb-8">
-            <BiEdit />
+            <GrChat />
           </div>
         </div>
       </div>
