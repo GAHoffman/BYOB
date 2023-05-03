@@ -2,16 +2,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signup from "./User/Signup";
 import "./App.css";
 import NavBar from "./NavBar";
-import PostsList from "./Posts/postsList";
 import { useGetTokenQuery } from "./store/authApi";
 import AuthProvider from "./utils/AuthProvider";
 import ProduceForm from "./Produce/ProduceForm";
 import PostForm from "./Posts/PostForm";
-
 import LandingPage from "./LandingPage";
 import UpdateProduceFrom from "./Produce/UpdateProduceForm";
 import ProduceDetail from "./Produce/ProduceDetail";
-import ProfileDetail from "./User/ProfileDetail";
+import ProfilePage from "./User/ProfilePage";
 import PostsDetail from "./Posts/PostsDetail";
 import ProduceList from "./Produce/produceList";
 import UpdatePostForm from "./Posts/UpdatePostForm";
@@ -36,7 +34,7 @@ function App() {
         <Route element={<AuthProvider token={data} />}>
           <Route path="users">
             <Route path=":user_id">
-              <Route index element={<ProfileDetail />} />
+              <Route index element={<ProfilePage />} />
               <Route path="produce">
                 <Route index element={<ProduceList />} />
                 <Route path="new" element={<ProduceForm />} />
