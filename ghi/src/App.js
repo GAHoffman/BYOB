@@ -7,7 +7,7 @@ import { useGetTokenQuery } from "./store/authApi";
 import AuthProvider from "./utils/AuthProvider";
 import ProduceForm from "./Produce/ProduceForm";
 import PostForm from "./Posts/PostForm";
-import Footer from "./Components/footer";
+
 import LandingPage from "./LandingPage";
 import UpdateProduceFrom from "./Produce/UpdateProduceForm";
 import ProduceDetail from "./Produce/ProduceDetail";
@@ -61,7 +61,6 @@ function App() {
           </Route>
         </Route>
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 }

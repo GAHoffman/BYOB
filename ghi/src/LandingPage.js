@@ -4,6 +4,7 @@ import AboutUs from "./Components/aboutUs";
 import Carousel from "./Components/carousel";
 import farmers from "./Assets/farmers.json";
 import Lottie from "lottie-react";
+import Footer from "./Components/footer";
 import { useState, useEffect } from "react";
 
 export default function LandingPage({ token }) {
@@ -28,6 +29,9 @@ export default function LandingPage({ token }) {
       </div>
       <div>
         <Carousel />
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );
