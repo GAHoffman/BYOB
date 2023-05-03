@@ -80,7 +80,7 @@ const Story = () => {
             alt="user image"
           />
           <div>
-            <div className="bg-blue-300 w-[35px] h-[35px] rounded-full grid place-items-center text-[24px] text-white mx-auto -mt-[20px] relative outline outline-[6px] outline-white cursor-pointer">
+            <div className="bg-blue-300 hover:bg-blue-600 w-[35px] h-[35px] rounded-full grid place-items-center text-[24px] text-white mx-auto -mt-[20px] relative outline outline-[6px] outline-white cursor-pointer">
               <AiOutlinePlus />
             </div>
             <p className="text-center mt-2 font-medium">Create Story</p>

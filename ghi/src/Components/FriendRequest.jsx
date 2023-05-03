@@ -17,10 +17,10 @@ const FriendRequest = () => {
       </div>
 
       <div className="mt-4 flex justify-end gap-2">
-        <button className="bg-blue-500 text-white py-2 px-5 rounded-lg">
+        <button className="bg-gray-300 hover:bg-blue-500 hover:text-white text-black py-2 px-5 rounded-lg">
           Confirm
         </button>
-        <button className="bg-gray-300 text-black py-2 px-5 rounded-lg">
+        <button className="bg-gray-300 hover:bg-red-500 hover:text-white text-black py-2 px-5 rounded-lg">
           Delete
         </button>
       </div>

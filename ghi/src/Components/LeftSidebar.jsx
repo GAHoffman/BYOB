@@ -21,12 +21,14 @@ const LeftSidebar = () => {
         <LeftSidebarLink image="/calendar_1.png" text="Events" />
         <LeftSidebarLink image="/clock.png" text="Most Recent" />
 
-        <div className="flex items-center gap-3 w-[300px] py-2 pl-1 cursor-pointer hover:bg-gray-300">
-          <div className="bg-gray-300 h-[30px] w-[30px] grid place-items-center rounded-full">
-            <BsChevronUp />
+        <Link to="/posts">
+          <div className="flex items-center gap-3 w-[300px] py-2 pl-1 cursor-pointer hover:bg-gray-300">
+            <div className="bg-gray-300 h-[30px] w-[30px] grid place-items-center rounded-full">
+              <BsChevronUp />
+            </div>
+            <h1 className="text-[16px] font-medium">Top of Page</h1>
           </div>
-          <h1 className="text-[16px] font-medium">Top of Page</h1>
-        </div>
+        </Link>
 
         <p className="text-[14px] text-gray-500 mt-2">
           Privacy · Terms · Advertising · Ad choices · <br /> Cookies · BYOB ©
