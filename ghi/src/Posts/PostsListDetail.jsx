@@ -27,13 +27,17 @@ function PostsListDetail({ singlePost }) {
     <div className="py-4 bg-white rounded-[17px] shadow-md mt-5">
       <div className="px-4 flex justify-between items-center">
         <div className="flex gap-2">
-          <img
-            className="w-[44px] h-[44px] object-cover rounded-full"
-            src={user.avatar_url}
-            alt="dp"
-          />
+          <Link to={`/users/${singlePost?.user?.user_id}`}>
+            <img
+              className="w-[44px] h-[44px] object-cover rounded-full"
+              src={singlePost?.user?.avatar_url}
+              alt="dp"
+            />
+          </Link>
           <div>
-            <h1 className="text-[16px] font-semibold">{user.username}</h1>
+            <h1 className="text-[16px] font-semibold">
+              {singlePost?.user?.username}
+            </h1>
             <div className="text-gray-500 flex items-center gap-2">
               <p className="text-xs">
                 {new Date(singlePost.post_created).toLocaleDateString("en-US")}{" "}
