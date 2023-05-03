@@ -12,6 +12,7 @@ import LandingPage from "./LandingPage";
 import UpdateProduceFrom from "./Produce/UpdateProduceForm";
 import ProduceDetail from "./Produce/ProduceDetail";
 import ProfileDetail from "./User/ProfileDetail";
+import ProfilePage from "./User/ProfilePage";
 import PostsDetail from "./Posts/PostsDetail";
 import ProduceList from "./Produce/produceList";
 import UpdatePostForm from "./Posts/UpdatePostForm";
@@ -36,7 +37,7 @@ function App() {
         <Route element={<AuthProvider token={data} />}>
           <Route path="users">
             <Route path=":user_id">
-              <Route index element={<ProfileDetail />} />
+              <Route index element={<ProfilePage />} />
               <Route path="produce">
                 <Route index element={<ProduceList />} />
                 <Route path="new" element={<ProduceForm />} />
