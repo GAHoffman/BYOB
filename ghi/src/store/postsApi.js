@@ -6,6 +6,7 @@ export const postsApi = createApi({
     baseUrl: process.env.REACT_APP_BYOB_SERVICE_API_HOST,
     credentials: "include",
   }),
+  tagTypes: ["postsList"],
   endpoints: (builder) => ({
     getAllPosts: builder.query({
       query: () => "/posts",
@@ -20,7 +21,7 @@ export const postsApi = createApi({
         body: data,
         method: "post",
       }),
-      invalidatesTag: ["postsList"],
+      invalidatesTags: ["postsList"],
     }),
     updatePosts: builder.mutation({
       query: ({ posts_id, data }) => ({

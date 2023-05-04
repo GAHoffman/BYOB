@@ -6,6 +6,7 @@ export const pickupsApi = createApi({
     baseUrl: process.env.REACT_APP_BYOB_SERVICE_API_HOST,
     credentials: "include",
   }),
+  tagTypes: ["pickupsList"],
   endpoints: (builder) => ({
     getAllDriverDeliveries: builder.query({
       query: (driver_id) => `/drivers/${driver_id}/deliveries`,

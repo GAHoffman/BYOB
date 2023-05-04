@@ -31,7 +31,7 @@ function TopNavBar({ token }) {
   }
 
   return (
-    <div className="w-full h-20 bg-byob-cyan">
+    <div className="w-full h-20 bg-byob-cyan top-0 sticky z-50">
       <div className="flex justify-between items-center h-20 px-4 max-w-[1440px] mx-auto bg-byob-cyan">
         <div>
           <Link to="/posts">
@@ -50,7 +50,7 @@ function TopNavBar({ token }) {
               </Link>
             </li>
             <li className="flex justify-center items-center px-4 text-[#203330] hover:text-[#CDD884] bg-byob-cyan hover:bg-[#203330] font-bold rounded-lg">
-              <Link to="/posts/new">Create Post</Link>
+              <Link to="/posts">Create Post</Link>
             </li>
             <li className="flex justify-center items-center px-4 text-[#203330] hover:text-[#CDD884] bg-byob-cyan hover:bg-[#203330] font-bold rounded-lg">
               <Link to="/deliveries/new">Request Delivery</Link>

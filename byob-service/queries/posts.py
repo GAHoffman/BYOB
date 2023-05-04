@@ -182,7 +182,7 @@ class PostsRepo:
                             , u.id
                             , u.username
                             , u.avatar_url
-                        ORDER BY pr.exp_date DESC
+                        ORDER BY p.post_created DESC
                         """
                     )
                     rows = cur.fetchall()

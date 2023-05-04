@@ -6,6 +6,7 @@ export const requestsApi = createApi({
     baseUrl: process.env.REACT_APP_BYOB_SERVICE_API_HOST,
     credentials: "include",
   }),
+  tagTypes: ["requestsList"],
   endpoints: (builder) => ({
     getAllRequests: builder.query({
       query: (user_id) => `/users/${user_id}/deliveries`,

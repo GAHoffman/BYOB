@@ -1,5 +1,5 @@
 import { useGetAllPostsQuery } from "../store/postsApi";
-import PostsDetail from "./PostsDetail";
+import PostsListDetail from "./PostsListDetail";
 
 function PostsList() {
   const { data: posts, isError, isLoading } = useGetAllPostsQuery();
@@ -23,8 +23,8 @@ function PostsList() {
     <div className="flex flex-col space-y-6">
       {posts &&
         posts.map((post) => (
-          <div key={post.post_created}>
-            <PostsDetail singlePost={post} />
+          <div key={post.posts_id}>
+            <PostsListDetail singlePost={post} />
           </div>
         ))}
     </div>
