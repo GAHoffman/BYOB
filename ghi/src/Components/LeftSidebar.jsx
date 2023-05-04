@@ -3,6 +3,13 @@ import { BsChevronUp } from "react-icons/bs";
 import LeftSidebarLink from "./LeftSidebarLink";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import gardener from "../Assets/gardener.png";
+import seeds from "../Assets/seeds.png";
+import market from "../Assets/market.png";
+import bookmark from "../Assets/bookmark.png";
+import vineyard from "../Assets/vineyard.png";
+import calendar_1 from "../Assets/calendar_1.png";
+import clock from "../Assets/clock.png";
 
 const LeftSidebar = () => {
   const user = useSelector((state) => state.auth.user);
@@ -17,19 +24,19 @@ const LeftSidebar = () => {
         <Link to={`/users/${user.user_id}`}>
           <LeftSidebarLink image={user.avatar_url} text={user.username} />
         </Link>
-        <LeftSidebarLink image="/gardener.png" text="Friends" />
+        <LeftSidebarLink image={gardener} text="Friends" />
         <Link to={`/users/${user.user_id}/produce/new`}>
-          <LeftSidebarLink image="/seeds.png" text="Grow a Produce" />
+          <LeftSidebarLink image={seeds} text="Grow a Produce" />
         </Link>
 
         <div onClick={scrollToTop}>
-          <LeftSidebarLink image="/market.png" text="Make a Post" />
+          <LeftSidebarLink image={market} text="Make a Post" />
         </div>
 
-        <LeftSidebarLink image="/bookmark.png" text="Saved" />
-        <LeftSidebarLink image="/vineyard.png" text="Pages" />
-        <LeftSidebarLink image="/calendar_1.png" text="Events" />
-        <LeftSidebarLink image="/clock.png" text="Most Recent" />
+        <LeftSidebarLink image={bookmark} text="Saved" />
+        <LeftSidebarLink image={vineyard} text="Pages" />
+        <LeftSidebarLink image={calendar_1} text="Events" />
+        <LeftSidebarLink image={clock} text="Most Recent" />
 
         <div
           className="flex items-center gap-3 w-[300px] py-2 pl-1 cursor-pointer hover:bg-gray-300"

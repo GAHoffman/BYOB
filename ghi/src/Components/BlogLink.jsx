@@ -1,4 +1,9 @@
 import React from "react";
+import Carrots from "../Assets/Carrots.jpeg";
+import Jalapeno from "../Assets/Jalapeno.jpeg";
+import pomegranate from "../Assets/pomegranate.jpeg";
+import strawberries from "../Assets/strawberries.jpeg";
+import corn from "../Assets/corn.jpeg";
 
 const BlogLink = () => {
   return (
@@ -8,7 +13,7 @@ const BlogLink = () => {
           <div className="flex gap-3 items-center hover:bg-gray-200 cursor-pointer">
             <img
               className="h-[34px] rounded-full"
-              src="/Carrots.jpeg"
+              src={Carrots}
               alt="carrots"
             />
             <h1 className="font-medium">Garden Design</h1>
@@ -20,7 +25,7 @@ const BlogLink = () => {
           <div className="flex gap-3 items-center hover:bg-gray-200 cursor-pointer">
             <img
               className="h-[34px] rounded-full"
-              src="/Jalapeno.jpeg"
+              src={Jalapeno}
               alt="Jalapeno"
             />
             <h1 className="font-medium">Misfit Gardening</h1>
@@ -32,7 +37,7 @@ const BlogLink = () => {
           <div className="flex gap-3 items-center hover:bg-gray-200 cursor-pointer">
             <img
               className="h-[34px] rounded-full"
-              src="/pomegranate.jpeg"
+              src={pomegranate}
               alt="pomegranate"
             />
             <h1 className="font-medium">You Grow Girl</h1>
@@ -44,7 +49,7 @@ const BlogLink = () => {
           <div className="flex gap-3 items-center hover:bg-gray-200 cursor-pointer">
             <img
               className="h-[34px] rounded-full"
-              src="/strawberries.jpeg"
+              src={strawberries}
               alt="strawberries"
             />
             <h1 className="font-medium">A Way to Garden</h1>
@@ -58,11 +63,7 @@ const BlogLink = () => {
       >
         <div className="mt-4">
           <div className="flex gap-3 items-center hover:bg-gray-200 cursor-pointer">
-            <img
-              className="h-[34px] rounded-full"
-              src="/corn.jpeg"
-              alt="corn"
-            />
+            <img className="h-[34px] rounded-full" src={corn} alt="corn" />
             <h1 className="font-medium">Frustrated Gardener</h1>
           </div>
         </div>

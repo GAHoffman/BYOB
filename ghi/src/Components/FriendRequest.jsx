@@ -1,4 +1,5 @@
 import React from "react";
+import jackblackcircle from "../Assets/jackblackcircle.png";
 
 const FriendRequest = () => {
   return (
@@ -6,7 +7,7 @@ const FriendRequest = () => {
       <div className="flex gap-2 w-[100%]">
         <img
           className="h-[50px] w-[50px] rounded-full object-cover"
-          src="/jackblackcircle.png"
+          src={jackblackcircle}
           alt="jackblackcircle"
         />
         <div>

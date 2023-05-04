@@ -14,9 +14,12 @@ import goldenplantas from "../Assets/goldenplantas.json";
 
 export default function UpdatePostForm() {
   const { posts_id } = useParams();
-  const [textState, setTextState] = useState("");
-  const [postImgUrl, setPostImgUrl] = useState("");
-  const [produce, setProduce] = useState("");
+  const { data: post } = useGetPostsQuery(posts_id, { skip: !posts_id });
+  const postsText = post?.text;
+  const postsImgUrl = post?.postimg_url;
+  const [textState, setTextState] = useState(postsText);
+  const [postImgUrl, setPostImgUrl] = useState(postsImgUrl);
+  const [produce, setProduce] = useState(0);
   const navigate = useNavigate();
   const user = useSelector((state) => state.auth.user);
 
@@ -29,8 +32,6 @@ export default function UpdatePostForm() {
   const handleProduceChange = (event) => {
     setProduce(event.target.value);
   };
-
-  const { data: post } = useGetPostsQuery(posts_id, { skip: !posts_id });
 
   const {
     data: produceData,
@@ -131,9 +132,7 @@ export default function UpdatePostForm() {
                 <div>
                   <label htmlFor="text">Post body</label>
                   <input
-                    value={
-                      !textState.trim() && post?.text ? post.text : textState
-                    }
+                    value={textState}
                     onChange={handleTextStateChange}
                     placeholder="Write the body of your post here!"
                     required
@@ -147,11 +146,7 @@ export default function UpdatePostForm() {
                 <div className="pb-4">
                   <label htmlFor="text">Image</label>
                   <input
-                    value={
-                      !postImgUrl.trim() && post?.postimg_url
-                        ? post.postimg_url
-                        : postImgUrl
-                    }
+                    value={postImgUrl}
                     onChange={handlePostImgUrlChange}
                     placeholder="Drop an image here!"
                     required
