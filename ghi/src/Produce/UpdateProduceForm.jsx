@@ -10,6 +10,8 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import { useNavigate } from "react-router-dom";
+import Lottie from "lottie-react";
+import goldenplantas from "../Assets/goldenplantas.json";
 
 const UpdateProduceFrom = () => {
   const { user_id, produce_id } = useParams();
@@ -125,162 +127,168 @@ const UpdateProduceFrom = () => {
   };
 
   return (
-    <div className="mx-auto max-w-xl px-4 py-16 sm:px-9 sm:py-215 lg:max-w-20xl lg:px-8">
-      <div className="row">
-        <div className="offset-3 col-6">
-          <div className="shadow p-4 mt-4">
-            <h1 className="text-2xl font-bold tracking-tight text-gray-900">
-              Update A Produce
-            </h1>
-            <form id="update-produce-form">
-              <div>
-                <label htmlFor="name">Name</label>
-                <input
-                  value={produce?.name ? produce?.name : name}
-                  onChange={handleNameChange}
-                  placeholder="Name"
-                  required
-                  type="text"
-                  name="name"
-                  id="name"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="quantity">Quantity</label>
-                <input
-                  value={produce?.quantity ? produce?.quantity : quantity}
-                  onChange={handleQuantityChange}
-                  placeholder="Quantity"
-                  required
-                  type="text"
-                  name="quantity"
-                  id="quantity"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="weight">Weight</label>
-                <input
-                  value={produce?.weight ? produce?.weight : weight}
-                  onChange={handleWeightChange}
-                  placeholder="Weight"
-                  required
-                  type="text"
-                  name="weight"
-                  id="weight"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="description">Description</label>
-                <input
-                  value={
-                    produce?.description ? produce?.description : description
-                  }
-                  onChange={handleDescriptionChange}
-                  placeholder="Description"
-                  required
-                  type="text"
-                  name="description"
-                  id="description"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="imageUrl">Image Url</label>
-                <input
-                  value={produce?.image_url ? produce?.image_url : imageUrl}
-                  onChange={handleImageUrlChange}
-                  placeholder="imageUrl"
-                  required
-                  type="text"
-                  name="imageUrl"
-                  id="imageUrl"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="expirationDate">Expiration Date</label>
-                <input
-                  value={produce?.exp_date ? produce?.exp_date : expDate}
-                  onChange={handleExpDateChange}
-                  placeholder="Expiration Date"
-                  required
-                  type="date"
-                  name="expirationDate"
-                  id="expirationDate"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
-              </div>
-
-              <div>
-                <FormGroup>
-                  <FormControlLabel
-                    control={
-                      <Switch
-                        checked={isAvailable}
-                        onChange={handleChangeAvailable}
-                        inputProps={{ "aria-label": "controlled" }}
-                      />
-                    }
-                    label="Available"
+    <>
+      <Lottie
+        className="fixed top-0 -z-10 w-auto h-auto min-w-full min-h-full max-w-none opacity-25"
+        animationData={goldenplantas}
+      />
+      <div className="mx-auto max-w-xl px-4 py-16 sm:px-9 sm:py-215 lg:max-w-20xl lg:px-8">
+        <div className="row">
+          <div className="offset-3 col-6">
+            <div className="shadow p-4 mt-4">
+              <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+                Update A Produce
+              </h1>
+              <form id="update-produce-form">
+                <div>
+                  <label htmlFor="name">Name</label>
+                  <input
+                    value={produce?.name ? produce?.name : name}
+                    onChange={handleNameChange}
+                    placeholder="Name"
+                    required
+                    type="text"
+                    name="name"
+                    id="name"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
-                  <FormControlLabel
-                    control={
-                      <Switch
-                        checked={isDecorative}
-                        onChange={handleChangeDecorative}
-                        inputProps={{ "aria-label": "controlled" }}
-                      />
-                    }
-                    label="Decorative"
+                </div>
+
+                <div>
+                  <label htmlFor="quantity">Quantity</label>
+                  <input
+                    value={produce?.quantity ? produce?.quantity : quantity}
+                    onChange={handleQuantityChange}
+                    placeholder="Quantity"
+                    required
+                    type="text"
+                    name="quantity"
+                    id="quantity"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   />
-                </FormGroup>
-              </div>
+                </div>
 
-              <div className="pb-4">
-                <label htmlFor="price">Price</label>
-                <input
-                  value={produce?.price ? produce?.price : price}
-                  onChange={handlePriceChange}
-                  placeholder="price"
-                  required
-                  type="text"
-                  name="price"
-                  id="price"
-                  pattern="^\d{1,3}(?:,\d{3})*\.\d{2}$"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
-              </div>
+                <div>
+                  <label htmlFor="weight">Weight</label>
+                  <input
+                    value={produce?.weight ? produce?.weight : weight}
+                    onChange={handleWeightChange}
+                    placeholder="Weight"
+                    required
+                    type="text"
+                    name="weight"
+                    id="weight"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                </div>
 
-              <div className="flex gap-4">
-                <button
-                  onClick={handleSubmit}
-                  type="submit"
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-[50%]"
-                >
-                  Update Produce
-                </button>
+                <div>
+                  <label htmlFor="description">Description</label>
+                  <input
+                    value={
+                      produce?.description ? produce?.description : description
+                    }
+                    onChange={handleDescriptionChange}
+                    placeholder="Description"
+                    required
+                    type="text"
+                    name="description"
+                    id="description"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                </div>
 
-                <button
-                  onClick={handleDelete}
-                  type="submit"
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-[50%]"
-                >
-                  Delete Produce
-                </button>
-              </div>
-            </form>
+                <div>
+                  <label htmlFor="imageUrl">Image Url</label>
+                  <input
+                    value={produce?.image_url ? produce?.image_url : imageUrl}
+                    onChange={handleImageUrlChange}
+                    placeholder="imageUrl"
+                    required
+                    type="text"
+                    name="imageUrl"
+                    id="imageUrl"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="expirationDate">Expiration Date</label>
+                  <input
+                    value={produce?.exp_date ? produce?.exp_date : expDate}
+                    onChange={handleExpDateChange}
+                    placeholder="Expiration Date"
+                    required
+                    type="date"
+                    name="expirationDate"
+                    id="expirationDate"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                </div>
+
+                <div>
+                  <FormGroup>
+                    <FormControlLabel
+                      control={
+                        <Switch
+                          checked={isAvailable}
+                          onChange={handleChangeAvailable}
+                          inputProps={{ "aria-label": "controlled" }}
+                        />
+                      }
+                      label="Available"
+                    />
+                    <FormControlLabel
+                      control={
+                        <Switch
+                          checked={isDecorative}
+                          onChange={handleChangeDecorative}
+                          inputProps={{ "aria-label": "controlled" }}
+                        />
+                      }
+                      label="Decorative"
+                    />
+                  </FormGroup>
+                </div>
+
+                <div className="pb-4">
+                  <label htmlFor="price">Price</label>
+                  <input
+                    value={produce?.price ? produce?.price : price}
+                    onChange={handlePriceChange}
+                    placeholder="price"
+                    required
+                    type="text"
+                    name="price"
+                    id="price"
+                    pattern="^\d{1,3}(?:,\d{3})*\.\d{2}$"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                </div>
+
+                <div className="flex gap-4">
+                  <button
+                    onClick={handleSubmit}
+                    type="submit"
+                    className="bg-[#D8E4C2] hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full w-[50%]"
+                  >
+                    Update Produce
+                  </button>
+
+                  <button
+                    onClick={handleDelete}
+                    type="submit"
+                    className="bg-red-300 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full w-[50%]"
+                  >
+                    Delete Produce
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -174,13 +174,7 @@ export default function ProfilePage() {
                         power to bring people together and works tirelessly to
                         share their knowledge and passion with others.
                       </p>
-                      <a
-                        href=""
-                        className="font-normal text-green-500"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        Show more
-                      </a>
+                      <div className="cursor-pointer">Show more</div>
                     </div>
                   </div>
                 </div>

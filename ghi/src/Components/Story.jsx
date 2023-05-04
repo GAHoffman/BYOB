@@ -77,7 +77,7 @@ const Story = () => {
           <img
             className="w-[112px] h-[151px] rounded-t-[15px] object-cover"
             src={user.avatar_url}
-            alt="user image"
+            alt="user"
           />
           <div>
             <div className="bg-blue-300 hover:bg-blue-600 w-[35px] h-[35px] rounded-full grid place-items-center text-[24px] text-white mx-auto -mt-[20px] relative outline outline-[6px] outline-white cursor-pointer">

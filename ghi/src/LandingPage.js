@@ -11,7 +11,7 @@ export default function LandingPage({ token }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 3550);
+    setTimeout(() => setLoading(false), 2000);
   }, []);
 
   return loading ? (

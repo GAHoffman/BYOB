@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  Avatar,
   Button,
   Card,
   CardHeader,
@@ -17,8 +16,6 @@ import {
   HashtagIcon,
   CheckBadgeIcon,
   PhotoIcon,
-  PencilSquareIcon,
-  UserCircleIcon,
 } from "@heroicons/react/24/solid";
 
 function PostsCard({ singlePost }) {

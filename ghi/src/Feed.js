@@ -4,7 +4,7 @@ import LeftSidebar from "./Components/LeftSidebar";
 import PostForm from "./Posts/PostForm";
 import Story from "./Components/Story";
 import Lottie from "lottie-react";
-import plantsgardening from "./Assets/plantsgardening.json";
+import goldenplantas from "./Assets/goldenplantas.json";
 import PostsList from "./Posts/postsList";
 
 const Feed = () => {
@@ -19,7 +19,7 @@ const Feed = () => {
       </div>
       <Lottie
         className="fixed top-0 -z-10 w-auto h-auto min-w-full min-h-full max-w-none opacity-25"
-        animationData={plantsgardening}
+        animationData={goldenplantas}
       />
     </>
   );

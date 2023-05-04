@@ -9,6 +9,8 @@ import { useGetAllProduceQuery } from "../store/produceApi";
 import { useGetPostsQuery } from "../store/postsApi";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Lottie from "lottie-react";
+import goldenplantas from "../Assets/goldenplantas.json";
 
 export default function UpdatePostForm() {
   const { posts_id } = useParams();
@@ -83,102 +85,108 @@ export default function UpdatePostForm() {
     );
   }
   return (
-    <div className="mx-auto max-w-xl px-4 py-16 sm:px-9 sm:py-215 lg:max-w-20xl lg:px-8">
-      <div className="row">
-        <div className="offset-3 col-6">
-          <div className="shadow p-4 mt-4">
-            <h1 className="text-2xl font-bold tracking-tight text-gray-900">
-              Update A Post
-            </h1>
+    <>
+      <div className="mx-auto max-w-xl px-4 py-16 sm:px-9 sm:py-215 lg:max-w-20xl lg:px-8">
+        <div className="row">
+          <div className="offset-3 col-6">
+            <div className="shadow p-4 mt-4">
+              <h1 className="text-2xl font-bold tracking-tight text-gray-900">
+                Update A Post
+              </h1>
 
-            <form id="update-post-form">
-              <div>
-                <select
-                  value={produce.produce_id}
-                  onChange={handleProduceChange}
-                  required
-                  id="produce"
-                  name="produce"
-                  className="form-select"
-                >
-                  <option
-                    value={
-                      post?.produce?.produce_id ? post.produce.produce_id : ""
-                    }
+              <form id="update-post-form">
+                <div>
+                  <select
+                    value={produce.produce_id}
+                    onChange={handleProduceChange}
+                    required
+                    id="produce"
+                    name="produce"
+                    className="form-select"
                   >
-                    {post?.produce?.produce_id
-                      ? post.produce.name
-                      : "Choose from your produce"}
-                  </option>
-                  {produceData &&
-                    produceData.map((singleProduce) => {
-                      return (
-                        <option
-                          key={singleProduce.produce_id}
-                          value={singleProduce.produce_id}
-                        >
-                          {singleProduce.name}
-                        </option>
-                      );
-                    })}
-                  ;
-                </select>
-              </div>
+                    <option
+                      value={
+                        post?.produce?.produce_id ? post.produce.produce_id : ""
+                      }
+                    >
+                      {post?.produce?.produce_id
+                        ? post.produce.name
+                        : "Choose from your produce"}
+                    </option>
+                    {produceData &&
+                      produceData.map((singleProduce) => {
+                        return (
+                          <option
+                            key={singleProduce.produce_id}
+                            value={singleProduce.produce_id}
+                          >
+                            {singleProduce.name}
+                          </option>
+                        );
+                      })}
+                    ;
+                  </select>
+                </div>
 
-              <div>
-                <label htmlFor="text">Post body</label>
-                <input
-                  value={
-                    !textState.trim() && post?.text ? post.text : textState
-                  }
-                  onChange={handleTextStateChange}
-                  placeholder="Write the body of your post here!"
-                  required
-                  type="text"
-                  name="text"
-                  id="text"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
-              </div>
+                <div>
+                  <label htmlFor="text">Post body</label>
+                  <input
+                    value={
+                      !textState.trim() && post?.text ? post.text : textState
+                    }
+                    onChange={handleTextStateChange}
+                    placeholder="Write the body of your post here!"
+                    required
+                    type="text"
+                    name="text"
+                    id="text"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                </div>
 
-              <div className="pb-4">
-                <label htmlFor="text">Image</label>
-                <input
-                  value={
-                    !postImgUrl.trim() && post?.postimg_url
-                      ? post.postimg_url
-                      : postImgUrl
-                  }
-                  onChange={handlePostImgUrlChange}
-                  placeholder="Drop an image here!"
-                  required
-                  type="text"
-                  name="postImgUrl"
-                  id="postImgUrl"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                />
-              </div>
+                <div className="pb-4">
+                  <label htmlFor="text">Image</label>
+                  <input
+                    value={
+                      !postImgUrl.trim() && post?.postimg_url
+                        ? post.postimg_url
+                        : postImgUrl
+                    }
+                    onChange={handlePostImgUrlChange}
+                    placeholder="Drop an image here!"
+                    required
+                    type="text"
+                    name="postImgUrl"
+                    id="postImgUrl"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                </div>
 
-              <div className="flex gap-4">
-                <button
-                  onClick={handleSubmit}
-                  type="submit"
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                >
-                  Update post
-                </button>
-                <button
-                  onClick={handleDelete}
-                  type="submit"
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                >
-                  Delete post
-                </button>
-              </div>
-            </form>
+                <div className="flex gap-4">
+                  <button
+                    onClick={handleSubmit}
+                    type="submit"
+                    className="bg-[#D8E4C2] hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full w-[50%]"
+                  >
+                    Update Post
+                  </button>
+                  <button
+                    onClick={handleDelete}
+                    type="submit"
+                    className="bg-red-300 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full w-[50%]"
+                  >
+                    Delete Post
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <Lottie
+        className="fixed top-0 -z-10 w-auto h-auto min-w-full min-h-full max-w-none opacity-25"
+        animationData={goldenplantas}
+      />
+    </>
   );
 }

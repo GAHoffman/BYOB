@@ -3,7 +3,7 @@ import React from "react";
 const BlogLink = () => {
   return (
     <>
-      <a href="https://www.gardendesign.com/" target="_blank">
+      <a href="https://www.gardendesign.com/" target="_blank" rel="noreferrer">
         <div className="mt-4">
           <div className="flex gap-3 items-center hover:bg-gray-200 cursor-pointer">
             <img
@@ -15,7 +15,7 @@ const BlogLink = () => {
           </div>
         </div>
       </a>
-      <a href="https://misfitgardening.com/" target="_blank">
+      <a href="https://misfitgardening.com/" target="_blank" rel="noreferrer">
         <div className="mt-4">
           <div className="flex gap-3 items-center hover:bg-gray-200 cursor-pointer">
             <img
@@ -27,7 +27,7 @@ const BlogLink = () => {
           </div>
         </div>
       </a>
-      <a href="http://www.yougrowgirl.com/" target="_blank">
+      <a href="http://www.yougrowgirl.com/" target="_blank" rel="noreferrer">
         <div className="mt-4">
           <div className="flex gap-3 items-center hover:bg-gray-200 cursor-pointer">
             <img
@@ -39,7 +39,7 @@ const BlogLink = () => {
           </div>
         </div>
       </a>
-      <a href="https://awaytogarden.com/" target="_blank">
+      <a href="https://awaytogarden.com/" target="_blank" rel="noreferrer">
         <div className="mt-4">
           <div className="flex gap-3 items-center hover:bg-gray-200 cursor-pointer">
             <img
@@ -51,7 +51,11 @@ const BlogLink = () => {
           </div>
         </div>
       </a>
-      <a href="https://frustratedgardener.com/" target="_blank">
+      <a
+        href="https://frustratedgardener.com/"
+        target="_blank"
+        rel="noreferrer"
+      >
         <div className="mt-4">
           <div className="flex gap-3 items-center hover:bg-gray-200 cursor-pointer">
             <img
