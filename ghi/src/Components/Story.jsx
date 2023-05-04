@@ -9,42 +9,42 @@ const Story = () => {
   const singleStoryData = [
     {
       title: "Jack Black",
-      img: "/jackblackcircle.png",
+      img: "https://i.gyazo.com/8a847a1352a65f1e669d9d5190d8512d.png",
       postImg:
         "bg-[url('https://images.pexels.com/photos/2847908/pexels-photo-2847908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]",
       hrefLink: "https://www.youtube.com/watch?v=pLQuIuokP6Q",
     },
     {
       title: "Bill Gates",
-      img: "/bill_gates.jpg",
+      img: "https://i.gyazo.com/0138cbdc1acb5ba77826787b479ef3a3.jpg",
       postImg:
         "bg-[url('https://images.pexels.com/photos/4039451/pexels-photo-4039451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]",
       hrefLink: "https://www.youtube.com/watch?v=tKbHqxI7VFA",
     },
     {
       title: "Jack Black",
-      img: "/jackblackcircle.png",
+      img: "https://i.gyazo.com/8a847a1352a65f1e669d9d5190d8512d.png",
       postImg:
         "bg-[url('https://images.pexels.com/photos/95215/pexels-photo-95215.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]",
       hrefLink: "https://youtu.be/dq8ojt3Frj0",
     },
     {
       title: "Bill Gates",
-      img: "/bill_gates.jpg",
+      img: "https://i.gyazo.com/0138cbdc1acb5ba77826787b479ef3a3.jpg",
       postImg:
         "bg-[url('https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]",
       hrefLink: "https://www.youtube.com/watch?v=B0DrWAUsNSc",
     },
     {
       title: "Jack Black",
-      img: "/jackblackcircle.png",
+      img: "https://i.gyazo.com/8a847a1352a65f1e669d9d5190d8512d.png",
       postImg:
         "bg-[url('https://images.pexels.com/photos/4503269/pexels-photo-4503269.jpeg?auto=compress&cs=tinysrgb&w=1600')]",
       hrefLink: "https://www.youtube.com/watch?v=0fcpi1Yje1A",
     },
     {
       title: "Bill Gates",
-      img: "/bill_gates.jpg",
+      img: "https://i.gyazo.com/0138cbdc1acb5ba77826787b479ef3a3.jpg",
       postImg:
         "bg-[url('https://images.pexels.com/photos/2847908/pexels-photo-2847908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]",
       hrefLink: "https://youtu.be/bRWac1OpxPY",

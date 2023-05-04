@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Button,
   Card,
@@ -24,6 +24,8 @@ function PostsCard({ singlePost }) {
   const timeDiff = Math.abs(today.getTime() - postDate.getTime());
   const dayDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
   const dateString = dayDiff === 1 ? "1d ago" : `${dayDiff}d ago`;
+
+  const navigate = useNavigate();
 
   function formatDate(dateStr) {
     const date = new Date(dateStr);
@@ -213,10 +215,11 @@ function PostsCard({ singlePost }) {
                         size="lg"
                         fullWidth={true}
                         className="px-2 py-2 rounded-md text-md font-medium ml-4"
+                        onClick={() => {
+                          navigate(`/posts/${singlePost.posts_id}/update`);
+                        }}
                       >
-                        <Link to={`/posts/${singlePost.posts_id}/update`}>
-                          Update Post
-                        </Link>
+                        Update Post
                       </Button>
                     </CardFooter>
                   </Card>
@@ -331,10 +334,11 @@ function PostsCard({ singlePost }) {
                         size="lg"
                         fullWidth={true}
                         className="px-2 py-2 rounded-md text-md font-medium ml-4"
+                        onClick={() => {
+                          navigate(`/posts/${singlePost.posts_id}/update`);
+                        }}
                       >
-                        <Link to={`/posts/${singlePost.posts_id}/update`}>
-                          Update Post
-                        </Link>
+                        Update Post
                       </Button>
                     </CardFooter>
                   </Card>

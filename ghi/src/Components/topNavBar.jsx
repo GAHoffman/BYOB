@@ -31,7 +31,10 @@ function TopNavBar({ token }) {
   }
 
   return (
-    <div className="w-full h-20 bg-byob-cyan top-0 sticky z-50">
+    <div
+      className="w-full h-20 bg-byob-cyan top-0 sticky z-50"
+      style={{ position: "fixed", top: 0, left: 0, width: "100%", zIndex: 50 }}
+    >
       <div className="flex justify-between items-center h-20 px-4 max-w-[1440px] mx-auto bg-byob-cyan">
         <div>
           <Link to="/posts">

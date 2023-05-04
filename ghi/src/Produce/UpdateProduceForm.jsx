@@ -15,16 +15,25 @@ import goldenplantas from "../Assets/goldenplantas.json";
 
 const UpdateProduceFrom = () => {
   const { user_id, produce_id } = useParams();
-  const [name, setName] = useState("");
-  const [quantity, setQuantity] = useState("");
-  const [weight, setWeight] = useState("");
-  const [description, setDescription] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-  const [expDate, setExpDate] = useState("");
-  const [price, setPrice] = useState("");
+  const { data: produce } = useGetProduceQuery(
+    { user_id, produce_id },
+    { skip: !produce_id }
+  );
+  const produceName = produce?.name;
+  const produceQuantity = produce?.quantity;
+  const produceWeight = produce?.weight;
+  const produceDescription = produce?.description;
+  const produceImageUrl = produce?.image_url;
+  const produceExpDate = produce?.exp_date;
+  const producePrice = produce?.price;
+  const [name, setName] = useState(produceName);
+  const [quantity, setQuantity] = useState(produceQuantity);
+  const [weight, setWeight] = useState(produceWeight);
+  const [description, setDescription] = useState(produceDescription);
+  const [imageUrl, setImageUrl] = useState(produceImageUrl);
+  const [expDate, setExpDate] = useState(produceExpDate);
+  const [price, setPrice] = useState(producePrice);
   const navigate = useNavigate();
-
-  const { data: produce } = useGetProduceQuery({ user_id, produce_id });
 
   const [updateProduce, result] = useUpdateProduceMutation({
     user_id,
@@ -95,9 +104,9 @@ const UpdateProduceFrom = () => {
   useEffect(() => {
     if (result.isSuccess || deleteResult.isSuccess) {
       handleReset();
-      navigate("/posts");
+      navigate(`/users/${user_id}`);
     }
-  }, [result.isSuccess, deleteResult.isSuccess, navigate]);
+  }, [result.isSuccess, deleteResult.isSuccess, navigate, user_id]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -143,7 +152,7 @@ const UpdateProduceFrom = () => {
                 <div>
                   <label htmlFor="name">Name</label>
                   <input
-                    value={produce?.name ? produce?.name : name}
+                    value={name}
                     onChange={handleNameChange}
                     placeholder="Name"
                     required
@@ -157,7 +166,7 @@ const UpdateProduceFrom = () => {
                 <div>
                   <label htmlFor="quantity">Quantity</label>
                   <input
-                    value={produce?.quantity ? produce?.quantity : quantity}
+                    value={quantity}
                     onChange={handleQuantityChange}
                     placeholder="Quantity"
                     required
@@ -171,7 +180,7 @@ const UpdateProduceFrom = () => {
                 <div>
                   <label htmlFor="weight">Weight</label>
                   <input
-                    value={produce?.weight ? produce?.weight : weight}
+                    value={weight}
                     onChange={handleWeightChange}
                     placeholder="Weight"
                     required
@@ -185,9 +194,7 @@ const UpdateProduceFrom = () => {
                 <div>
                   <label htmlFor="description">Description</label>
                   <input
-                    value={
-                      produce?.description ? produce?.description : description
-                    }
+                    value={description}
                     onChange={handleDescriptionChange}
                     placeholder="Description"
                     required
@@ -201,7 +208,7 @@ const UpdateProduceFrom = () => {
                 <div>
                   <label htmlFor="imageUrl">Image Url</label>
                   <input
-                    value={produce?.image_url ? produce?.image_url : imageUrl}
+                    value={imageUrl}
                     onChange={handleImageUrlChange}
                     placeholder="imageUrl"
                     required
@@ -215,7 +222,7 @@ const UpdateProduceFrom = () => {
                 <div>
                   <label htmlFor="expirationDate">Expiration Date</label>
                   <input
-                    value={produce?.exp_date ? produce?.exp_date : expDate}
+                    value={expDate}
                     onChange={handleExpDateChange}
                     placeholder="Expiration Date"
                     required
@@ -254,7 +261,7 @@ const UpdateProduceFrom = () => {
                 <div className="pb-4">
                   <label htmlFor="price">Price</label>
                   <input
-                    value={produce?.price ? produce?.price : price}
+                    value={price}
                     onChange={handlePriceChange}
                     placeholder="price"
                     required

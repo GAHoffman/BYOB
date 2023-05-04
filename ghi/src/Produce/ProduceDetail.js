@@ -31,8 +31,6 @@ function ProduceDetail({ singleProduce }) {
     navigate("/posts");
   };
 
-  console.log(singleProduce, "this is the single produce");
-
   return (
     <Card className="max-w-full shadow-lg flex flex-col w-full rounded-lg bg-byob-cyan pb-4">
       <div className="flex flex-row">

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useCreateProduceMutation } from "../store/produceApi";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
@@ -65,6 +65,8 @@ const ProduceForm = () => {
     setPrice(value);
   };
 
+  const navigate = useNavigate();
+
   const handleReset = () => {
     setName("");
     setQuantity("");
@@ -80,8 +82,9 @@ const ProduceForm = () => {
   useEffect(() => {
     if (result.isSuccess) {
       handleReset();
+      navigate(`/users/${user_id}`);
     }
-  }, [result.isSuccess]);
+  }, [result.isSuccess, navigate, user_id]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
