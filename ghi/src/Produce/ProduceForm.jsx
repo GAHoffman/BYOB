@@ -84,7 +84,7 @@ const ProduceForm = () => {
       handleReset();
       navigate(`/users/${user_id}`);
     }
-  }, [result.isSuccess, navigate]);
+  }, [result.isSuccess, navigate, user_id]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

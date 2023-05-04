@@ -15,7 +15,10 @@ import goldenplantas from "../Assets/goldenplantas.json";
 
 const UpdateProduceFrom = () => {
   const { user_id, produce_id } = useParams();
-  const { data: produce } = useGetProduceQuery({ user_id, produce_id });
+  const { data: produce } = useGetProduceQuery(
+    { user_id, produce_id },
+    { skip: !produce_id }
+  );
   const produceName = produce?.name;
   const produceQuantity = produce?.quantity;
   const produceWeight = produce?.weight;
@@ -103,7 +106,7 @@ const UpdateProduceFrom = () => {
       handleReset();
       navigate(`/users/${user_id}`);
     }
-  }, [result.isSuccess, deleteResult.isSuccess, navigate]);
+  }, [result.isSuccess, deleteResult.isSuccess, navigate, user_id]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
