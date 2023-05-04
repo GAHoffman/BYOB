@@ -32,7 +32,7 @@ function PostsCard({ singlePost }) {
     const date = new Date(dateStr);
     const month = date.getMonth() + 1;
     const day = date.getDate();
-    const year = date.getFullYear().toString().substr(-2);
+    const year = date.getFullYear().toString();
     return `${month}/${day}/${year}`;
   }
 
@@ -287,20 +287,60 @@ function PostsCard({ singlePost }) {
                   aria-modal="true"
                   aria-labelledby="modal-title"
                 >
-                  <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                  <div className="bg-byob-cyan px-4 py-3 sm:px-6 sm:flex items-center justify-between">
+                    <h2 className="text-xl font-bold text-[#203330]">
+                      {singlePost.text}
+                    </h2>
                     <button
                       onClick={closeModal}
                       type="button"
-                      className="inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:ml-3 sm:w-auto sm:text-sm"
+                      className="inline-flex justify-center rounded-md bg-byob-cyan focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
                     >
-                      X
+                      <svg
+                        className="h-6 w-6 text-[#203330]"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M6 18L18 6M6 6l12 12"
+                        ></path>
+                      </svg>
                     </button>
                   </div>
-                  <div className="px-4 py-5 sm:p-6">
-                    <h2 className="text-lg font-medium text-gray-900 mb-4">
-                      Additional Details
-                    </h2>
-                  </div>
+
+                  <Card className="w-full shadow-lg">
+                    <CardHeader floated={false} color="blue-gray">
+                      <img
+                        src={singlePost.postimg_url}
+                        alt="ui/ux review check"
+                      />
+                      <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
+                    </CardHeader>
+                    <CardBody></CardBody>
+                    <CardFooter className="pt-3 flex justify-between">
+                      <Button
+                        size="lg"
+                        fullWidth={true}
+                        className="px-2 py-2 rounded-md text-md font-medium"
+                      >
+                        <Link to="/deliveries">Request Delivery</Link>
+                      </Button>
+                      <Button
+                        size="lg"
+                        fullWidth={true}
+                        className="px-2 py-2 rounded-md text-md font-medium ml-4"
+                      >
+                        <Link to={`/posts/${singlePost.posts_id}/update`}>
+                          Update Post
+                        </Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
                 </div>
               </div>
             </div>
