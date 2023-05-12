@@ -23,7 +23,7 @@ build-front-end-job:
     #     # You need to substitute in your real values for
     #     # GROUP_NAME, PROJECT_NAME, & WEBSERVICE_NAME below.
     PUBLIC_URL: https://byob1.gitlab.io/byob
-    REACT_APP_BYOB_SERVICE_API_HOST: https://byob.dec-pt-8.mod3projects.com
+    REACT_APP_BYOB_SERVICE_API_HOST: https://byob1.dec-pt-8.mod3projects.com
   script:
     - cd ghi
     - npm install
